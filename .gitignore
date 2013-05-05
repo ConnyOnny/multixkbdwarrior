@@ -1,3 +1,6 @@
+# main executable
+game
+
 # Compiled Object files
 *.slo
 *.lo
