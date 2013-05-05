@@ -12,6 +12,7 @@
 #include <map>
 #include <iostream>
 #include <set>
+#include <sstream>
 
 class Renderable {
 public:
@@ -351,7 +352,15 @@ int main (int argc, char** argv) {
 		}
 	}
 
-	//sleep(10);
+	for (size_t i=0; i<players.size(); i++) {
+		std::stringstream msg;
+		msg << "player " << players[i]->getName() << " has " << players[i]->getScore() << " points." << std::endl;
+		std::cout << msg.str();
+		playerTextFields[i].text = msg.str();
+	}
+	render(dpy, w, gc, blackColor, toRender);
+
+	sleep(5);
 
 	return 0;
 }
